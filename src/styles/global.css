@@ -1,5 +1,4 @@
-/* GENERAL PAGE LAYOUT */
-
+/* GENERAL PAGE LAYOUT*/
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,11 +6,11 @@
 }
 
 body {
-  font-family: system-ui, -apple-system, sans-serif;
-  background-color: #0f0f10;
-  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background-color: #222222;
+  color: #ffffff;
 }
-
 
 .page {
   display: grid;
@@ -22,36 +21,83 @@ body {
 /* SIDENAV */
 
 .sidenav {
-  background: linear-gradient(180deg, #0f0f10, #161618);
+  background-color: #161618;
   padding: 24px;
+  display: flex;
+  flex-direction: column;
 }
 
+/* Title */
 .logo {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
-  margin-bottom: 24px;
+  margin-bottom: 4px;
 }
+
+/* Subtitle */
+.subtitle {
+  font-weight: 100;
+  margin-top: 10px;
+  font-size: 16px;
+  color: #9b9b9b;
+  margin-bottom: 32px;
+}
+
+/* LIST */
 
 .nav-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
 }
 
 .nav-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
   padding: 10px 12px;
   border-radius: 10px;
+
+  font-size: 16px;
   color: #c7c7c7;
   cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+/* ICONS*/
+.nav-list svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* Fill icons */
+.nav-list svg {
+  fill: currentColor;
+}
+
+/* HOVERSTATE */
+.nav-list li:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
 }
 
 .nav-list li.active {
-  background: rgba(255, 255, 255, 0.08);
-  color: white;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
 }
 
-/* RESPONSIVE SIDE NAV */
+/* MAIN CONTENT */
+.content {
+  padding: 32px;
+}
+
+/* MOBILE RESPONSIVE */
 
 @media (max-width: 768px) {
   .page {
@@ -59,8 +105,17 @@ body {
     grid-template-rows: auto 1fr;
   }
 
+  .sidenav {
+    padding: 16px;
+  }
+
   .nav-list {
     flex-direction: row;
     gap: 16px;
   }
+}
+
+a:focus-visible {
+  outline: 3px solid #6d5dfc;
+  outline-offset: 4px;
 }

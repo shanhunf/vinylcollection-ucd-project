@@ -1,21 +1,41 @@
 ---
-/* SIDE NAVIGATION COMPONENT */
+//SIDE NAVIGATION COMPONENT //
 
 const { active } = Astro.props;
 
 ---
 <nav class="sidenav">
-  <h2 class="logo">Library</h2>
+  <!-- Sidebar title -->
+  <h2 class="logo">My Record Shelf</h2>
 
+  <!-- Subtitle (future dynamic data) -->
+  <p class="subtitle">X records in your collection</p>
+
+  <!-- Navigation -->
   <ul class="nav-list">
+
+    <!-- My Collection -->
     <li class={active === "collection" ? "active" : ""}>
-      My Collection
+      <!-- Phosphor: Record -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M64,128a64,64,0,0,1,64-64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M192,128a64,64,0,0,1-64,64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="128" cy="128" r="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+      <span>My Collection</span>
     </li>
-    <li class={active === "search" ? "active" : ""}>
-      Search Music
-    </li>
+
+    <!-- Search Records -->
+<li class={active === "search" ? "active" : ""}>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><line x1="40" y1="64" x2="216" y2="64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="40" y1="128" x2="112" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="40" y1="192" x2="128" y2="192" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="184" cy="144" r="32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="206.63" y1="166.63" x2="232" y2="192" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+  <span>Search Records</span>
+</li>
+
+
+    <!-- My Stats -->
     <li class={active === "stats" ? "active" : ""}>
-      My Stats
+      <!-- Phosphor: ChartBar -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><path d="M33.6,145.5A96,96,0,0,1,96,37.5v72Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M128,128.42V32A96,96,0,1,1,45.22,176.64Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+    
+      </svg>
+      <span>My Stats</span>
     </li>
+
   </ul>
 </nav>
