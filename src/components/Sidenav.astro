@@ -16,41 +16,49 @@ const { active } = Astro.props;
 
    <!-- My Collection -->
     <li class={`nav-item ${active === "collection" ? "active" : ""}`}>
-      <span class="nav-icon">
-        <!-- From Phosphor Icon: Record -->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" aria-hidden="true">
-          <circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-width="16"/>
-          <circle cx="128" cy="128" r="24" fill="none" stroke="currentColor" stroke-width="16"/>
-        </svg>
-      </span>
-      <span class="nav-label">My Collection</span>
-    </li>
+  <a href="/" class="nav-link">
+    <!-- icon -->
+    <span class="nav-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" aria-hidden="true">
+        <circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-width="16"/>
+        <circle cx="128" cy="128" r="24" fill="none" stroke="currentColor" stroke-width="16"/>
+      </svg>
+    </span>
+    <span class="nav-label">My Collection</span>
+  </a>
+</li>
 
-   <!-- Search Records -->
-    <li class={`nav-item ${active === "search" ? "active" : ""}`}>
-      <span class="nav-icon">
-        <!-- Phosphor: Search -->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" aria-hidden="true">
-          <circle cx="112" cy="112" r="80" fill="none" stroke="currentColor" stroke-width="16"/>
-          <line x1="168" y1="168" x2="224" y2="224" stroke="currentColor" stroke-width="16"/>
-        </svg>
-      </span>
-      <span class="nav-label">Search Records</span>
-    </li>
+<!-- Search Records -->
+<li class={`nav-item ${active === "search" ? "active" : ""}`}>
+  <a href="/search" class="nav-link">
+    <!-- icon -->
+    <span class="nav-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" aria-hidden="true">
+        <circle cx="112" cy="112" r="80" fill="none" stroke="currentColor" stroke-width="16"/>
+        <line x1="168" y1="168" x2="224" y2="224" stroke="currentColor" stroke-width="16"/>
+      </svg>
+    </span>
+    <span class="nav-label">Search Records</span>
+  </a>
+</li>
+
 
 
     <!-- My Stats -->
     <li class={`nav-item ${active === "stats" ? "active" : ""}`}>
-      <span class="nav-icon">
-        <!-- Phosphor: Chart -->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" aria-hidden="true">
-          <line x1="48" y1="224" x2="48" y2="128" stroke="currentColor" stroke-width="16"/>
-          <line x1="112" y1="224" x2="112" y2="80" stroke="currentColor" stroke-width="16"/>
-          <line x1="176" y1="224" x2="176" y2="32" stroke="currentColor" stroke-width="16"/>
-        </svg>
-      </span>
-      <span class="nav-label">My Stats</span>
-    </li>
+  <a href="/stats" class="nav-link">
+    <!-- icon -->
+    <span class="nav-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" aria-hidden="true">
+        <line x1="48" y1="224" x2="48" y2="128" stroke="currentColor" stroke-width="16"/>
+        <line x1="112" y1="224" x2="112" y2="80" stroke="currentColor" stroke-width="16"/>
+        <line x1="176" y1="224" x2="176" y2="32" stroke="currentColor" stroke-width="16"/>
+      </svg>
+    </span>
+    <span class="nav-label">My Stats</span>
+  </a>
+</li>
+
 
   </ul>
 </nav>
