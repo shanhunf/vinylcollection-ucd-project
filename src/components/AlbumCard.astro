@@ -1,9 +1,10 @@
 ---
+import LogBTN from "./logBTN.astro";
+
 const {
-  title = "Album Title",
-  artist = "Artist Name",
-  cover = "/assets/placeholder.jpg",
-  status = "Haven’t listened yet"
+  title,
+  artist,
+  cover
 } = Astro.props;
 ---
 
@@ -11,9 +12,8 @@ const {
   <div class="album-cover">
     <img src={cover} alt={`${title} album cover`} />
 
-    <span class="album-status">
-      {status}
-    </span>
+    <!-- Log button lives ON the image -->
+    <LogBTN />
   </div>
 
   <div class="album-meta">

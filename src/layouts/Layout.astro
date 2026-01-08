@@ -1,5 +1,6 @@
 ---
-import "../styles/global.css";
+import "../style/global.css";
+
 const { title = "My Record Shelf" } = Astro.props;
 ---
 <!DOCTYPE html>
@@ -12,7 +13,9 @@ const { title = "My Record Shelf" } = Astro.props;
 
   <body>
     <div class="page">
-      <slot />
-    </div>
+  <slot name="sidenav" />
+  <slot name="content" />
+</div>
+
   </body>
 </html>

@@ -218,8 +218,10 @@ html, body{
 /* --------------------------------- */
 /* Album Card or grid*/
 
-.album-grid{
-  padding: 32px;
+.album-grid {
+  align-items: center;
+  height: 48px;
+  padding: 0 30px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   gap: 24px;
@@ -228,40 +230,120 @@ html, body{
 .album-card {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  cursor: pointer
+  gap: 8px;
 }
 
-.album-card img {
+.album-cover {
+  position: relative;
   width: 100%;
-  aspect-ratio: 1/1;
+}
+
+.album-cover img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 8px;
-  background-color: #2a2a2a;
+  display: block;
 }
 
 .album-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
   min-width: 0;
 }
 
 .album-title {
   font-size: 14px;
-  font-weight: bold;
-  color: white;
-
-   /* when the album title is too long it doesnt go onto the next line */
+  font-weight: 600;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.album-artist{
+.album-artist {
   font-size: 13px;
   color: #9b9b9b;
 }
+
+
+/* --------------------- */
+/* LOG BUTTON */
+
+.log-btn {
+  position: absolute;
+  left: 8px;
+  right: 8px;        /* 👈 key change */
+  bottom: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 👈 center everything */
+
+  gap: 8px;
+  padding: 8px 12px;
+  height: 32px;
+
+  border-radius: 999px;
+  background: #ffffff;
+  color: #000000;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+.log-btn__text {
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.log-btn__checkbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+.log-btn__icon {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.log-btn:hover {
+  background: #000;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+/* text switching */
+.log-btn__text--active {
+  display: none;
+}
+
+.log-btn__checkbox:checked ~ .log-btn__text .log-btn__text--default {
+  display: none;
+}
+
+.log-btn__checkbox:checked ~ .log-btn__text .log-btn__text--active {
+  display: inline;
+}
+
+/* checked icon */
+.log-btn__checkbox:checked ~ .log-btn__icon::after {
+  content: "✓";
+}
+
+/* checked background */
+.log-btn:has(.log-btn__checkbox:checked) {
+  background: #7b61ff;
+  color: #fff;
+  border-color: #7b61ff;
+}
+
 
 
 /* --------------------------------- */
